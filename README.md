@@ -147,8 +147,7 @@
     {
         id: 0,
         username: '',
-        password: '',
-        articles: []
+        password: ''
     }
 ```
 
