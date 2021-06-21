@@ -29,9 +29,10 @@
 
 ```js
     {
-        title: '',   // (Required)
-        link: '',    // (Required)
-        category: '' // (Optional)
+        title: '',      // (Required)
+        link: '',       // (Required)
+        description: '' // (Required)
+        category: ''    // (Optional)
     }
 ```
 
@@ -150,24 +151,3 @@
         password: ''
     }
 ```
-
-<!-- ## Steps
-
-| REST       | Endpoint                |
-| :--------- | :---------------------- |
-| POST       | /api/steps/:id/articles |
-| DELETE     | /api/steps/:id/articles |
-
-| Property   | Type              |
-| :--------- | :---------------- |
-| user_id    | Number (Required) |
-| article_id | Number (Required) |
-
-### Payload - Save Article
-
-```js
-    {
-        user_id: 0,
-        article_id: 0
-    }
-``` -->

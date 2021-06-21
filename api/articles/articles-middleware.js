@@ -27,8 +27,8 @@ const checkArticlePayload = (req, res, next) => {
     else if (!body.link) {
         next({ status: 400, message: 'link is missing' });
     }
-    else if (!body.user_id) {
-        next({ status: 400, message: 'user_id is missing' });
+    else if (!body.description) {
+        next({ status: 400, message: 'description is missing' });
     }
     else {
         req.body = body;

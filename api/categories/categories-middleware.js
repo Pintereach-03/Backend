@@ -21,9 +21,6 @@ const checkCategoryPayload = (req, res, next) => {
     if (!body.name) {
         next({ status: 400, message: 'name is missing' });
     }
-    else if (!body.user_id) {
-        next({ status: 400, message: 'user_id is missing' });
-    }
     else {
         req.body = body;
         next();

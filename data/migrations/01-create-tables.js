@@ -14,6 +14,8 @@ exports.up = (knex) => {
                 .notNullable();
             table.text('link')
                 .notNullable();
+            table.text('description')
+                .notNullable();
             table.text('category')
                 .nullable();
             table.timestamp('created_at')
