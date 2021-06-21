@@ -2,7 +2,7 @@
 
 ```https://pintereach-03.herokuapp.com```
 
-## Articles
+## Articles (Restricted)
 
 ### Method
 
@@ -31,7 +31,7 @@
     {
         title: '',      // (Required)
         link: '',       // (Required)
-        description: '' // (Required)
+        description: '', // (Required)
         category: ''    // (Optional)
     }
 ```
@@ -49,7 +49,7 @@
     }
 ```
 
-## Categories
+## Categories (Restricted)
 
 ### Method
 
@@ -135,7 +135,7 @@
     }
 ```
 
-## Users
+## Users (Restricted)
 
 | REST    | Endpoint       |
 | :------ | :------------- |
