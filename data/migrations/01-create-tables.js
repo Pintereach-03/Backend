@@ -12,10 +12,10 @@ exports.up = (knex) => {
             table.increments();
             table.text('title')
                 .notNullable();
-            table.text('link')
-                .notNullable();
             table.text('description')
                 .notNullable();
+            table.text('link')
+                .nullable();
             table.text('category')
                 .nullable();
             table.timestamp('created_at')

@@ -18,14 +18,14 @@ const checkArticleId = (req, res, next) => {
 const checkArticlePayload = (req, res, next) => {
     const { body, decodedToken } = req;
     body.user_id = decodedToken.id;
+    if (!body.link) {
+        body.link = null;
+    }
     if (!body.category) {
         body.category = null;
     }
     if (!body.title) {
         next({ status: 400, message: 'title is missing' });
-    }
-    else if (!body.link) {
-        next({ status: 400, message: 'link is missing' });
     }
     else if (!body.description) {
         next({ status: 400, message: 'description is missing' });
