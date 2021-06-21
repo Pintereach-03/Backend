@@ -38,10 +38,17 @@ const deleteById = async (id) => {
         });
 };
 
+const getByCategory = (filter) => {
+    return db('categories')
+        .where(filter)
+        .first();
+};
+
 module.exports = {
   getAll,
   getById,
   create,
   updateById,
-  deleteById
+  deleteById,
+  getByCategory
 };

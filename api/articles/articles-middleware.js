@@ -36,7 +36,24 @@ const checkArticlePayload = (req, res, next) => {
     }
 };
 
+const checkCategoryExists = (req, res, next) => {
+    const { body } = req;
+    Articles.getByCategory({ name: body.category })
+        .then(data => {
+            if (!data) {
+                body.category = null;
+                next();
+            }
+            else {
+                body.category = data.name;
+                next();
+            }
+        })
+        .catch(next);
+};
+
 module.exports = {
     checkArticleId,
-    checkArticlePayload
+    checkArticlePayload,
+    checkCategoryExists
 };

@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const { checkArticleId, checkArticlePayload } = require('./articles-middleware');
+const { checkArticleId, checkArticlePayload, checkCategoryExists } = require('./articles-middleware');
 
 const Articles = require('./articles-model');
 
@@ -21,7 +21,7 @@ router.get('/:id', checkArticleId, (req, res, next) => {
         .catch(next);
 });
 
-router.post('/', checkArticlePayload, (req, res, next) => {
+router.post('/', checkArticlePayload, checkCategoryExists, (req, res, next) => {
     const { body } = req;
     return Articles.create(body)
         .then(data => {
@@ -30,7 +30,7 @@ router.post('/', checkArticlePayload, (req, res, next) => {
         .catch(next);
 });
 
-router.put('/:id', checkArticleId, checkArticlePayload, (req, res, next) => {
+router.put('/:id', checkArticleId, checkArticlePayload, checkCategoryExists, (req, res, next) => {
     const { id } = req.params;
     const { body } = req;
     return Articles.updateById(id, body)
